@@ -1,0 +1,15 @@
+#translator-buttons {
+    padding-top: 20px;
+}
+
+.translator-button {
+    margin: 0px 7px;
+    font-size: 32px;
+    padding: 8px 18px;
+}
+
+.translator-button:disabled {
+    cursor: not-allowed;
+    border: none;
+    box-shadow: none;
+}

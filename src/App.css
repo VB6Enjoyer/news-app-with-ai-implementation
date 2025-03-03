@@ -1,16 +1,32 @@
+:root {
+  --bgColor: #242424;
+  --textColor: #e3e3e3;
+}
+
 #root {
   max-width: 1920px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
   font-family: 'Inter', sans-serif;
+  background-color: var(--bgColor);
+  color: var(--textColor)
 }
 
 main {
   width: 100%;
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
 #header {
+  display: inline-block;
+  width: 20%;
   letter-spacing: 5px;
   margin-bottom: 0;
   background: linear-gradient(to right,
@@ -36,13 +52,56 @@ main {
 }
 
 #author {
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  width: 7.5%;
   font-size: 14px;
   animation: seesaw 2s ease-in-out infinite;
   transform-origin: center;
 }
 
+#loading-news {
+  background: linear-gradient(to right,
+      var(--bgColor),
+      var(--textColor));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-move 1s linear infinite;
+  background-size: 200% auto;
+}
+
+#author>a {
+  color: #ffffff;
+}
+
+#author>a:hover {
+  background: linear-gradient(to right,
+      #ff6b6b,
+      #ffd93d,
+      #ff8e3c,
+      #ff4757,
+      #ff6b6b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-move 4s linear infinite;
+  background-size: 200% auto;
+}
+
 #author:hover {
   animation-play-state: paused;
+}
+
+#form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#search-form {
+  margin-right: 10px;
 }
 
 #search-news {
@@ -52,6 +111,10 @@ main {
   font-size: 18px;
   background-color: #242424;
   margin-right: 10px;
+}
+
+#ai-button {
+  align-content: center;
 }
 
 #news-container {
@@ -70,6 +133,27 @@ main {
   z-index: 1;
 }
 
+#no-news-container {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  width: 66%;
+}
+
+#no-news {
+  display: inline-block;
+  color: #ffffff;
+}
+
+#boohoo {
+  width: 478px;
+  height: 336px;
+  object-fit: contain;
+}
+
+/* Makes the text shift through colors */
 @keyframes rainbow-move {
   0% {
     background-position: 0% center;
@@ -80,6 +164,7 @@ main {
   }
 }
 
+/* Makes the author text rotate up and down from its center */
 @keyframes seesaw {
 
   0%,
