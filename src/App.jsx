@@ -6,7 +6,7 @@ import Translator from './elements/Translator';
 const App = () => {
   const [news, setNews] = useState([]); // Stores the news fetched from the API
   const [search, setSearch] = useState(""); // User's search filter
-  const [url, setUrl] = useState("http://hn.algolia.com/api/v1/search?query="); // API's url
+  const [url, setUrl] = useState("https://hn.algolia.com/api/v1/search?query="); // API's url
   const [loading, setLoading] = useState(false); // Is the code fetching news from the API?
   const [useAI, setUseAI] = useState(true);
 
@@ -28,7 +28,7 @@ const App = () => {
   // Applies the user's search filter to the API's url to fetch more news
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent the page from refreshing as per default
-    setUrl(`http://hn.algolia.com/api/v1/search?query=${search}`);
+    setUrl(`https://hn.algolia.com/api/v1/search?query=${search}`);
   }
 
   // If the code is fetching news from the API, show a "Loading news..." message
