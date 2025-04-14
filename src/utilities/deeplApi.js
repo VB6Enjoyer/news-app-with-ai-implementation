@@ -28,7 +28,7 @@ const API_URL = "https://deepl-proxy.vercel.app/api/translate"; // Free DeepL AP
 
 const translateText = async (text, targetLang) => {
     try {
-        const response = await fetch("https://deepl-proxy.vercel.app/api/translate", {
+        const response = await fetch("https://deepl-api-service.vercel.app/api/translate", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
