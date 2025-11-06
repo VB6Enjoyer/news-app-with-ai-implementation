@@ -100,6 +100,8 @@ const NewsItem = ({ newsItem, index, useAI }) => {
             }
         } catch (error) {
             console.error("Error generating AI comment:", error);
+            console.log(data[0][0]);
+            console.log(data[0]);
             setAiComment("Error generating comment. Please try again.");
         } finally {
             setIsGeneratingComment(false); // After it's all done, set generatingComment to false to remove the "loading" message
@@ -186,6 +188,7 @@ const NewsItem = ({ newsItem, index, useAI }) => {
 }
 
 export default NewsItem;
+
 
 
 
