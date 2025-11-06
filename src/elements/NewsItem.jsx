@@ -95,7 +95,7 @@ const NewsItem = ({ newsItem, index, useAI }) => {
             if (!data.error & data && data[0][0] && data[0][1] && data[0][2]) {
                 setAiComment(data.map(arr => arr.sort((a, b) => a.label.localeCompare(b.label)))); // Maps the objects and sorts negatively alphabetically (Positive, Neutral, Negative)
             } else {
-                console.error(data.error);
+                console.error(data);
                 setAiComment("AI comment not available."); // If the API returns an error (like running out of credits when you have a free token), set the comment to "Not available"
             }
         } catch (error) {
@@ -186,6 +186,7 @@ const NewsItem = ({ newsItem, index, useAI }) => {
 }
 
 export default NewsItem;
+
 
 
 
