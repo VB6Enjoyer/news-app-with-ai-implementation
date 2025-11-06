@@ -77,7 +77,7 @@ const NewsItem = ({ newsItem, index, useAI }) => {
 
         try {
             const API_KEY = import.meta.env.VITE_HUGGINGFACE_API_TOKEN; // Environment variable for the API stored in .env.local in the root folder
-            const API_URL = "https://api-inference.huggingface.co/models/cardiffnlp/twitter-roberta-base-sentiment-latest";
+            const API_URL = "https://router.huggingface.co/hf-inference/models/cardiffnlp/twitter-roberta-base-sentiment-latest";
 
             const response = await fetch(API_URL, { // * I really should use Axios
                 method: "POST",
@@ -185,4 +185,5 @@ const NewsItem = ({ newsItem, index, useAI }) => {
 }
 
 export default NewsItem;
+
 
