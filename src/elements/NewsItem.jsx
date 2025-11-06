@@ -99,7 +99,7 @@ const NewsItem = ({ newsItem, index, useAI }) => {
                 console.log(data.error)
                 console.log(data[0][0]);
                 console.log(data[0][1]);
-                console.log(data[0][2);
+                console.log(data[0][2]);
                 setAiComment("AI comment not available."); // If the API returns an error (like running out of credits when you have a free token), set the comment to "Not available"
             }
         } catch (error) {
@@ -190,6 +190,7 @@ const NewsItem = ({ newsItem, index, useAI }) => {
 }
 
 export default NewsItem;
+
 
 
 
