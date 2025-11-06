@@ -96,12 +96,12 @@ const NewsItem = ({ newsItem, index, useAI }) => {
                 setAiComment(data.map(arr => arr.sort((a, b) => a.label.localeCompare(b.label)))); // Maps the objects and sorts negatively alphabetically (Positive, Neutral, Negative)
             } else {
                 console.error(data);
+                console.log(data[0][0]);
+                console.log(data[0]);
                 setAiComment("AI comment not available."); // If the API returns an error (like running out of credits when you have a free token), set the comment to "Not available"
             }
         } catch (error) {
             console.error("Error generating AI comment:", error);
-            console.log(data[0][0]);
-            console.log(data[0]);
             setAiComment("Error generating comment. Please try again.");
         } finally {
             setIsGeneratingComment(false); // After it's all done, set generatingComment to false to remove the "loading" message
@@ -188,6 +188,7 @@ const NewsItem = ({ newsItem, index, useAI }) => {
 }
 
 export default NewsItem;
+
 
 
 
